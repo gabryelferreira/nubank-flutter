@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Image.asset('images/nubank_logo2.png',height: 50,),
+                          Image.asset('images/nubank_logo.png',height: 50,),
                           SizedBox(
                             width: 4,
                           ),
