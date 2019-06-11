@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/widgets/custom_card.dart';
 import 'package:nubank/widgets/tab_button.dart';
+import 'package:nubank/pages/indicar_amigos.dart';
 
 void main() => runApp(MyApp());
 
@@ -57,7 +58,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Image.asset('images/nubank_logo.png',height: 50,),
+                          Image.asset(
+                            'images/nubank_logo.png',
+                            height: 50,
+                          ),
                           SizedBox(
                             width: 4,
                           ),
@@ -95,7 +99,20 @@ class _MyHomePageState extends State<MyHomePage> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       Expanded(
-                        child: CustomCard()
+                        child: Hero(
+                          tag: 'hero-fatura',
+                          child: CustomCard(
+                            onPress: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  fullscreenDialog: true,
+                                  builder: (context) => IndicarAmigosPage(),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -103,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height/4.5,
+              height: MediaQuery.of(context).size.height / 4.5,
               // width: MediaQuery.of(context).size.width,
               child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 20.0),
@@ -112,7 +129,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     TabButton(
-                      icon: Icon(Icons.sentiment_very_satisfied, color: Colors.white),
+                      icon: Icon(Icons.sentiment_very_satisfied,
+                          color: Colors.white),
                       text: "Indicar amigos",
                     ),
                     TabButton(
@@ -143,7 +161,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       icon: Icon(Icons.settings, color: Colors.white),
                       text: "Ajustar limite",
                     ),
-                    
                     TabButton(
                       icon: Icon(Icons.subject, color: Colors.white),
                       text: "Organizar atalhos",
