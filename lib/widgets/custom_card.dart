@@ -122,3 +122,14 @@ class CustomCard extends StatelessWidget {
     );
   }
 }
+
+class FullScreenCustomCard extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Hero(
+        tag: 'hero-fatura',
+        child: CustomCard(),
+      ),
+    );
+  }
+}

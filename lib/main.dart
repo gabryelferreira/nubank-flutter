@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/widgets/custom_card.dart';
 import 'package:nubank/widgets/tab_button.dart';
-import 'package:nubank/pages/indicar_amigos.dart';
 
 void main() => runApp(MyApp());
 
@@ -107,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 context,
                                 MaterialPageRoute(
                                   fullscreenDialog: true,
-                                  builder: (context) => IndicarAmigosPage(),
+                                  builder: (context) => FullScreenCustomCard(),
                                 ),
                               );
                             },
